@@ -42,7 +42,7 @@ const Calculator = () => {
     };
 
     const deleteLast = () => {
-        if (calc === "") {
+        if (calc == "") {
             return;
         }
 
