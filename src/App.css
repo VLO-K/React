@@ -1,7 +1,19 @@
 /* Config */
 :root {
-    --primary: #fff;
-    --secondary: #00b5ff;
+    /* Light Mode */
+    --light-primary-color: #c5cae9;
+    --light-secondary-color: #00b5ff;
+    --light-accent-color: #ff4081;
+    --light-accent-color: #ff80ab;
+    --light-theme-background-color: #fff;
+    --light-theme-text-color: #212121;
+
+    /* Dark Mode */
+    --dark-primary-color: #303f9f;
+    --dark-secondary-color: #00b5ff;
+    --dark-accent-color: #f50057;
+    --dark-theme-background-color: #212121;
+    --dark-theme-text-color: #fff;
 }
 
 *,
@@ -26,7 +38,7 @@ svg {
 }
 
 html {
-    color-scheme: dark light;
+    color-scheme: dark;
     scroll-behavior: smooth;
 }
 
@@ -36,19 +48,23 @@ body {
     justify-content: flex-start;
     overflow-x: hidden;
     width: 100%;
+    min-height: 100vh;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
 
-#root,
 .content {
     display: flex;
     flex-direction: column;
-    align-self: center;
-    width: 100%;
     height: 100%;
-    color: var(--primary);
+    width: 100%;
+    color: var(--dark-theme-text-color);
     background-color: black;
+}
+
+.spaceline {
+    display: block;
+    height: 50px;
 }
 
 /* Config */

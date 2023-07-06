@@ -27,8 +27,8 @@ const NavigationBar = () => {
                             <a href="/contact">Contact</a>
                         </div>
                     </div>
-                    <a href="/signin" className="nav-signin">
-                        Sign In
+                    <a href="/signup" className="nav-signin">
+                        Get Started
                     </a>
                     {/* Navigation Menu Desktop */}
                     {/* Navigation Menu Phone */}

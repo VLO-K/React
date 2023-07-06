@@ -5,6 +5,7 @@ const Contact = () => {
     return (
         <div className="content">
             <NavigationBar />
+            <div className="content-container"></div>
             <Footer />
         </div>
     );

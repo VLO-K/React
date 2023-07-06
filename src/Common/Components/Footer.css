@@ -1,11 +1,24 @@
-.footer-wrapper {
+.footer {
+    user-select: none;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer-container {
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
-    height: 600px;
     background-color: #4c69f6;
+    width: 100vw;
+    height: 90vh;
+    max-width: 1920px;
+    padding: 30px 0;
 }
+
+.footer-section {
+    display: flex;
+}
+
 #navigation-footer a {
     display: flex;
     position: relative;
@@ -13,5 +26,43 @@
     flex-direction: column;
     font-size: 16px;
     color: var(--primary);
-    background-color: blueviolet; 
+    background-color: blueviolet;
+}
+
+.socmed {
+    display: flex;
+    user-select: none;
+    gap: 20px;
+    z-index: 999;
+}
+
+.socmed-title {
+    color: #999999;
+}
+
+.socmed-link {
+    transition: all 0.5s ease;
+    filter: brightness(80%);
+}
+
+.socmed-link:hover {
+    filter: brightness(100%);
+}
+
+.footer-cr {
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .footer {
+        align-self: center;
+        width: 90%;
+    }
+    .footer-container {
+        justify-content: left;
+        width: 100%;
+    }
+    .footer-cr {
+        display: none;
+    }
 }
