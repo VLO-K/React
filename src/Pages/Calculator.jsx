@@ -1,4 +1,5 @@
 import { useState } from "react";
+import * as math from "mathjs";
 
 import "./Calculator.css";
 
@@ -16,10 +17,15 @@ const Calculator = () => {
             return;
         }
 
-        setCalc(calc + value);
+        setCalc((prevCalc) => prevCalc + value);
 
         if (!ops.includes(value)) {
-            setResult(eval(calc + value).toString());
+            try {
+                const evaluatedResult = math.evaluate(calc + value);
+                setResult(evaluatedResult.toString());
+            } catch (error) {
+                setResult("Error");
+            }
         }
     };
 
@@ -38,7 +44,13 @@ const Calculator = () => {
     };
 
     const calculate = () => {
-        setCalc(eval(calc).toString());
+        try {
+            const evaluatedResult = math.evaluate(calc);
+            setCalc(evaluatedResult.toString());
+            setResult("");
+        } catch (error) {
+            setResult("Error");
+        }
     };
 
     const deleteLast = () => {
@@ -72,7 +84,7 @@ const Calculator = () => {
                         <button onClick={deleteLast}>DEL</button>
                     </div>
 
-                    {/* Diggits Buttons */}
+                    {/* Digits Buttons */}
                     <div className="digits">
                         {createDigits()}
                         <button onClick={() => updateCalc("0")}>0</button>
